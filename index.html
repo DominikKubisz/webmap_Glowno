@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<meta charset="utf-8"/>
+		<title>Interaktywna mapa atrakcji i walorów turystycznych Gminy Głowno i Miasta Głowno</title>
+		<link rel="stylesheet" href="main.css" type="text/css">
+		<link rel="stylesheet" href="src/leaflet.css" type="text/css">
+		<link rel="stylesheet" href="src/css/bootstrap.min.css" type="text/css">
+		<link rel="stylesheet" href="src/css/fontello.css" type="text/css">
+		<link rel="stylesheet" href="src/plugins/L.Control.Sidebar.css">
+		<link rel="stylesheet" href="src/plugins/L.Control.Pan.css">
+		<link rel="stylesheet" href="src/plugins/leaflet-measure.css">
+		<link rel="stylesheet" href="src/plugins/easy-button.css">
+		<link rel="stylesheet" href="src/css/glyphicons.css">
+		<link rel="stylesheet" href="src/plugins/leaflet-search.css">
+		<script src="src/leaflet-src.js"></script>
+		<script src="src/jquery-3.4.1.min.js"></script>
+        <script src="src/plugins/leaflet.ajax.min.js"></script>
+        <script src="src/js/bootstrap.js"></script>
+        <script src="src/plugins/L.Control.Pan.js"></script>
+        <script src="src/plugins/L.Control.Sidebar.js"></script>
+        <script src="src/plugins/leaflet-measure.js"></script>
+        <script src="src/plugins/leaflet-providers.js"></script>
+        <script src="src/plugins/easy-button.js"></script>
+        <script src="src/plugins/leaflet-search.js"></script>
+		<meta name="description" content="Przed Tobą interaktywna mapa atrakcji i walorów turystycznych zlokalizowanych w granicach administracyjnych tytułowych gmin. Zacznij klikać!"/>
+		<meta name="keywords" content="mapa, mapa interaktywna, kartografia, GIS, SIP, webmap, atrakcje turystyczne, turystyka, rekreacja, Głowno"/>
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+		<meta name="author" content="Dominik Kubisz"/>
+		<style>   
+		</style>
+	</head>
+	<body>
+        <header>
+            <nav class="navbar navbar-dark bg-webmapGlowno navbar-expand-md fluid">
+                <a class="navbar-brand ml-2" href="https://www.glowno.pl/" target="_blank"><img src="src/images/Miasto_Glowno_herb.svg" height="32" class="d-inline-block" alt="Miasto Głowno"></a>
+                <span class="navbar-text d-inline-block mr-2">Interaktywna mapa atrakcji i walorów turystycznych Gminy Głowno i Miasta Głowno</span>
+                <a class="navbar-brand ml-2" href="https://www.gmina-glowno.pl/" target="_blank"><img src="src/images/Gmina_Glowno_herb.svg" height="32" class="d-inline-block" alt="Gmina Głowno"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainmenu" aria-controls="mainmenu" aria-expanded="false" aria-label="Przełącznik nawigacji">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainmenu">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html"><i class="icon-home"></i> Start </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="o-projekcie.html"><i class="icon-map"></i> O projekcie </a>
+                        </li>    
+                        <li class="nav-item">
+                            <a class="nav-link" href="o-mnie.html"><i class="icon-user"></i> O mnie </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="mailto:dominik.kubisz@gmail.com"><i class="icon-mail"></i> Kontakt </a>
+                        </li>    
+                          
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div class="container-fluid">
+              <div class="row">
+               <div id="side_bar" class="col-md-12">
+                   <button id='btnLokalizacja' class='btn-webmapGlowno btn-block'>Twoja lokalizacja</button>
+                   <button id='btnGlowno' class='btn-webmapGlowno btn-block'>Wyśrodkuj mapę</button>
+                   <br>
+                   <div id="Legenda">
+                       <h5 class="text-center">Legenda</h5>
+                       <h6><img src=src/images/zabytki.svg height=35px width=35px>    Zabytki</h6>
+                       <h6><img src=src/images/obiekty_kultury.svg height=35px width=35px>   Obiekty kultury</h6>
+                       <h6><img src=src/images/obiekty_sakralne.svg height=35px width=35px>   Obiekty sakralne</h6>
+                       <h6><img src=src/images/cmentarz.svg height=35px width=35px>   Cmentarze</h6>
+                       <h6><img src=src/images/sport_rekreacja.svg height=35px width=35px>   Obiekty sportu i rekreacji</h6>
+                       <h6><img src=src/images/gastronomia.svg height=35px width=35px>    Obiekty gastronomiczne</h6>
+                       <h6><img src=src/images/nocleg.svg height=35px width=35px>   Obiekty noclegowe</h6>
+                       <h6><img src=src/images/bus.svg height=35px width=35px>   Przystanki BUS</h6>
+                       <h6><img src=src/images/PKP.svg height=35px width=35px>   Dworce i przystanki kolejowe</h6>
+                       <h6><img src=src/images/mural.svg height=35px width=35px>   Murale</h6>
+                       <h6><img src=src/images/event1.svg height=35px width=35px>   Imprezy cykliczne</h6>
+                       <h6><img src=src/images/pomniki_przyrody.svg height=35px width=35px>   Pomniki przyrody</h6>
+                       <h6><img src=src/images/rezerwaty_przyrody.svg height=35px width=35px>   Rezerwaty przyrody</h6>
+                       <h6><img src=src/images/uzytki_ekologiczne.svg height=35px width=35px>   Użytki ekologiczne</h6>
+                       <h6><img src=src/images/parki.svg height=35px width=35px>   Parki</h6>
+                       <h6><img src=src/images/granica.svg height=35px width=35px>    Granica obszaru badań</h6>
+                   </div>
+               </div>
+               <div id="mapdiv" class="col-md-12"></div>
+               </div>
+            </div>     
+            <script>
+                var mymap;
+                var lyrOSM;
+                var lyrTopo;
+                var lyrImagery;
+                var lyrObszar_badan;
+                var lyrZabytki;
+                var lyrObiekty_kultury;
+                var lyrObiekty_sakralne;
+                var lyrCmentarze;
+                var lyrDworce_i_przystanki_kolejowe;
+                var lyrMurale;
+                var lyrPomniki_przyrody;
+                var lyrObiekty_sportu_i_rekreacji;
+                var lyrObiekty_noclegowe;
+                var lyrPrzystanki_Bus;
+                var lyrObiekty_gastronomiczne;
+                var lyrImprezy_cykliczne;
+                var lyrRezerwaty_przyrody;
+                var lyrUzytki_ekologiczne;
+                var lyrParki;
+                var ctlLayers;
+                var objBasemaps;
+                var objOverlays;
+                var mrkCurrentLocation;
+                var ctlScale;
+                var ctlPan;
+                var ctlSidebar;
+                var measureControl;
+                var logo = L.control({position: 'bottomleft'});
+                var ctlEasybutton1;
+                var ctlEasybutton2;
+                var icnObiekty_gastronomiczne;
+                var icnZabytki;
+                var icnObiekty_kultury;
+                var icnObiekty_sakralne;
+                var icnCmentarze;
+                var icnDworce_i_przystanki_kolejowe;
+                var icnMurale;
+                var icnPomniki_przyrody;
+                var icnObiekty_sportu_i_rekreacji;
+                var icnObiekty_noclegowe;
+                var icnPrzystanki_BUS;
+                var icnImprezy_cykliczne;
+                $(document).ready(function(){
+                    mymap = L.map('mapdiv', {center:[51.9873650186,19.6726753267], zoom:11.5});
+                    lyrOSM = L.tileLayer.provider('OpenStreetMap.Mapnik',{attribution: '<a href="https://www.linkedin.com/in/dominik-kubisz-86a33b187/" target="_blank">@Dominik Kubisz</a>, &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors '})
+                    lyrTopo = L.tileLayer.provider('OpenTopoMap',{attribution: '<a href="https://www.linkedin.com/in/dominik-kubisz-86a33b187/" target="_blank">@Dominik Kubisz</a>, &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenTopoMap</a> contributors '})
+                    lyrImagery = L.tileLayer.provider('Esri.WorldImagery',{attribution: '<a href="https://www.linkedin.com/in/dominik-kubisz-86a33b187/" target="_blank">@Dominik Kubisz</a>, Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community <a href="http://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9" target="_blank">Esri World Imagery</a>'})
+                    mymap.addLayer(lyrOSM);
+                    
+                    //punkty
+                    lyrObszar_badan = L.geoJSON.ajax('src/data/obszar_badan.geoJSON', {style: obszar_badan_style}).addTo(mymap);
+                    lyrObiekty_gastronomiczne = L.geoJSON.ajax('src/data/obiekty_gastronomiczne.geoJSON',{pointToLayer:returnicnObiekty_gastronomiczne}).addTo(mymap);
+                    lyrZabytki = L.geoJSON.ajax('src/data/zabytki.geoJSON',{pointToLayer:returnicnZabytki}).addTo(mymap);
+                    lyrObiekty_kultury = L.geoJSON.ajax('src/data/obiekty_kultury.geoJSON',{pointToLayer:returnicnObiekty_kultury}).addTo(mymap);
+                    lyrObiekty_sakralne = L.geoJSON.ajax('src/data/obiekty_sakralne.geoJSON',{pointToLayer:returnicnObiekty_sakralne}).addTo(mymap);
+                    lyrCmentarze = L.geoJSON.ajax('src/data/cmentarze.geoJSON',{pointToLayer:returnicnCmentarze}).addTo(mymap);
+                    lyrDworce_i_przystanki_kolejowe = L.geoJSON.ajax('src/data/dworce_i_przystanki_kolejowe.geoJSON',{pointToLayer:returnicnDworce_i_przystanki_kolejowe}).addTo(mymap);
+                    lyrMurale = L.geoJSON.ajax('src/data/murale.geoJSON',{pointToLayer:returnicnMurale}).addTo(mymap);
+                    lyrPomniki_przyrody = L.geoJSON.ajax('src/data/pomniki_przyrody.geoJSON',{pointToLayer:returnicnPomniki_przyrody}).addTo(mymap);
+                    lyrObiekty_sportu_i_rekreacji = L.geoJSON.ajax('src/data/obiekty_sportu_i_rekreacji.geoJSON',{pointToLayer:returnicnObiekty_sportu_i_rekreacji}).addTo(mymap);
+                    lyrObiekty_noclegowe = L.geoJSON.ajax('src/data/obiekty_noclegowe.geoJSON',{pointToLayer:returnicnObiekty_noclegowe}).addTo(mymap);
+                    lyrPrzystanki_Bus = L.geoJSON.ajax('src/data/przystanki_BUS.geoJSON',{pointToLayer:returnicnPrzystanki_BUS}).addTo(mymap);
+                    lyrImprezy_cykliczne = L.geoJSON.ajax('src/data/imprezy_cykliczne.geoJSON',{pointToLayer:returnicnImprezy_cykliczne}).addTo(mymap);
+                    
+                    //poligony
+                    lyrRezerwaty_przyrody = L.geoJSON.ajax('src/data/rezerwaty_przyrody.geoJSON',{onEachFeature: onEachFeature, style:rezerwaty_przyrody_style}).addTo(mymap);
+                    lyrUzytki_ekologiczne = L.geoJSON.ajax('src/data/uzytki_ekologiczne.geoJSON',{onEachFeature: onEachFeature, style:uzytki_ekologiczne_style}).addTo(mymap);
+                    lyrParki = L.geoJSON.ajax('src/data/parki.geoJSON',{onEachFeature: onEachFeature, style:parki_style}).addTo(mymap);
+                    
+                    //GRUPA
+                    var lyrLayerGroup = L.layerGroup([lyrObiekty_gastronomiczne, lyrZabytki, lyrObiekty_kultury, lyrObiekty_sakralne, lyrCmentarze, lyrDworce_i_przystanki_kolejowe, lyrMurale, lyrPomniki_przyrody, lyrObiekty_sportu_i_rekreacji, lyrObiekty_noclegowe, lyrPrzystanki_Bus, lyrImprezy_cykliczne, lyrRezerwaty_przyrody, lyrUzytki_ekologiczne, lyrParki]).addTo(mymap);
+                    
+            
+                    icnZabytki = L.icon({iconUrl:'src/images/zabytki.svg',iconSize:[35,35], popupAnchor:[0, -22]});
+                    icnObiekty_kultury = L.icon({iconUrl:'src/images/obiekty_kultury.svg',iconSize:[35,35], popupAnchor:[0, -22]});
+                    icnObiekty_sakralne = L.icon({iconUrl:'src/images/obiekty_sakralne.svg',iconSize:[35,35], popupAnchor:[0, -22]});
+                    icnCmentarze = L.icon({iconUrl:'src/images/cmentarz.svg',iconSize:[35,35], popupAnchor:[0, -22]});
+                    icnObiekty_sportu_i_rekreacji = L.icon({iconUrl:'src/images/sport_rekreacja.svg',iconSize:[35,35], popupAnchor:[0, -22]});
+                    icnObiekty_gastronomiczne = L.icon({iconUrl:'src/images/gastronomia.svg',iconSize:[35,35], popupAnchor:[0, -22]});
+                    icnObiekty_noclegowe = L.icon({iconUrl:'src/images/nocleg.svg',iconSize:[35,35], popupAnchor:[0, -22]});
+                    icnPrzystanki_BUS = L.icon({iconUrl:'src/images/bus.svg',iconSize:[35,35], popupAnchor:[0, -22]});
+                    icnDworce_i_przystanki_kolejowe = L.icon({iconUrl:'src/images/PKP.svg',iconSize:[35,35], popupAnchor:[0, -22]});
+                    icnMurale = L.icon({iconUrl:'src/images/mural.svg',iconSize:[35,35], popupAnchor:[0, -22]});
+                    icnPomniki_przyrody = L.icon({iconUrl:'src/images/pomniki_przyrody.svg',iconSize:[35,35], popupAnchor:[0, -22]});
+                    icnImprezy_cykliczne = L.icon({iconUrl:'src/images/event1.svg',iconSize:[35,35], popupAnchor:[0, -22]});
+                    
+                    objBasemaps = {
+                        "Open Street Map": lyrOSM,
+                        "Open Topo Map": lyrTopo,
+                        "World Imagery": lyrImagery
+                    };
+                    
+                    objOverlays = {
+                        "<img src=src/images/zabytki.svg height=35px width=35px>    Zabytki":lyrZabytki,
+                        "<img src=src/images/obiekty_kultury.svg height=35px width=35px>   Obiekty kultury":lyrObiekty_kultury,
+                        "<img src=src/images/obiekty_sakralne.svg height=35px width=35px>   Obiekty sakralne":lyrObiekty_sakralne,
+                        "<img src=src/images/cmentarz.svg height=35px width=35px>   Cmentarze":lyrCmentarze,
+                        "<img src=src/images/sport_rekreacja.svg height=35px width=35px>   Obiekty sportu i rekreacji":lyrObiekty_sportu_i_rekreacji,
+                        "<img src=src/images/gastronomia.svg height=35px width=35px>    Obiekty gastronomiczne":lyrObiekty_gastronomiczne,
+                        "<img src=src/images/nocleg.svg height=35px width=35px>   Obiekty noclegowe":lyrObiekty_noclegowe,
+                        "<img src=src/images/bus.svg height=35px width=35px>   Przystanki BUS":lyrPrzystanki_Bus,
+                        "<img src=src/images/PKP.svg height=35px width=35px>   Dworce i przystanki kolejowe":lyrDworce_i_przystanki_kolejowe,
+                        "<img src=src/images/mural.svg height=35px width=35px>   Murale":lyrMurale,
+                        "<img src=src/images/event1.svg height=35px width=35px>   Imprezy cykliczne":lyrImprezy_cykliczne,
+                        "<img src=src/images/pomniki_przyrody.svg height=35px width=35px>   Pomniki przyrody":lyrPomniki_przyrody,
+                        "<img src=src/images/rezerwaty_przyrody.svg height=35px width=35px>   Rezerwaty przyrody":lyrRezerwaty_przyrody,
+                        "<img src=src/images/uzytki_ekologiczne.svg height=35px width=35px>   Użytki ekologiczne":lyrUzytki_ekologiczne,
+                        "<img src=src/images/parki.svg height=35px width=35px>   Parki":lyrParki,
+                        "<img src=src/images/granica.svg height=35px width=35px>    Granica obszaru badań":lyrObszar_badan
+                        
+                    };
+                    
+                    ctlLayers = L.control.layers(objBasemaps, objOverlays).addTo(mymap);
+                    logo.onAdd = function(map){
+                        var div = L.DomUtil.create('div', 'myclass');
+                        div.innerHTML= "<a href='http://www.geo.uni.lodz.pl/' target='_blank'><img src='src/images/header1-wng.svg' width='100' ></a>";
+                        return div;
+                        }
+                    logo.addTo(mymap);
+                    ctlScale = L.control.scale({position:'bottomright', imperial:false, maxWidth:100}).addTo(mymap);
+                    ctlPan = L.control.pan().addTo(mymap);
+                    ctlSidebar = L.control.sidebar('side_bar').addTo(mymap);
+                    ctlEasybutton1 = L.easyButton('glyphicon-transfer', function(){
+                        ctlSidebar.toggle();
+                    }).addTo(mymap);
+                    ctlEasybutton2 = L.easyButton('glyphicon-screenshot', function(){
+                                                 mymap.locate();
+                                                  }).addTo(mymap);
+                    mymap.addControl( new L.Control.Search({
+                        layer: lyrLayerGroup,
+                        initial: false,
+                        hideMarkerOnCollapse: true,
+                        propertyName: 'NAZWA',
+                        textErr: 'Obiekt nie został odnaleziony',
+                        textCancel: 'Anuluj',
+                        textPlaceholder: 'Wyszukaj atrakcję lub obiekt turystyczny',
+                        zoom: 17,
+                        position: 'topright'
+                        }));
+                    
+                    measureControl = L.control.measure({position: 'topright', primaryLengthUnit: 'meters', secondaryLengthUnit: 'kilometers', primaryAreaUnit: 'sqmeters', secondaryAreaUnit: 'hectares', activeColor: '#ABE67E', decPoint: ',', thousandsSep: ' '}).addTo(mymap);
+/*                    mymap.on('keypress', function(e) {
+                        if (e.originalEvent.key=="ctrl+l") {
+                            mymap.locate();
+*/
+/*                    mymap.on('contextmenu', function(e) {
+                        var dtCurrentTime = new Date();
+                        L.marker(e.latlng).addTo(mymap).bindPopup(e.latlng.toString()+"<br>"+dtCurrentTime.toString());
+                    });
+*/
+                    mymap.on('locationfound', function(e) {
+                        console.log(e);
+                        if (mrkCurrentLocation) {
+                            mrkCurrentLocation.remove();
+                        }
+                        mrkCurrentLocation = L.circle(e.latlng, {radius:e.accuracy/2}).addTo(mymap);
+                        mymap.setView(e.latlng, 14);
+                    });
+
+                    mymap.on('locationerror', function(e) {
+                        console.log(e);
+                        alert("Twoja aktualne położenie nie zostało odnalezione");
+                    })
+
+                    mymap.on('zoomend', function(){
+                        $("#zoom-level").html(mymap.getZoom());
+                    });
+
+                    mymap.on('moveend', function(){
+                        $("#map-center").html(LatLngToArrayString(mymap.getCenter()));
+                    });
+
+                    mymap.on('mousemove', function(e){
+                        $("#mouse-location").html(LatLngToArrayString(e.latlng));
+                    });
+
+                    $("#btnLokalizacja").click(function(){
+                        mymap.locate();
+                    });
+
+                    $("#btnGlowno").click(function(){
+                        mymap.setView([51.9873650186,19.6726753267], 11.5);
+                    })
+                });
+
+                function LatLngToArrayString(ll) {
+//                    console.log(ll);
+                    return "["+ll.lat.toFixed(5)+", "+ll.lng.toFixed(5)+"]";
+                }
+                function returnicnZabytki(json, latlng){
+                    var att = json.properties;
+                    return L.marker(latlng, {icon: icnZabytki}).bindPopup("<h6><b>Nazwa: </b>"+att.NAZWA+"</h6><h6><b>Adres: </b>"+att.ADRES+"</h6><h6><b>Ochrona: </b>"+att.OCHRONA+"</h6><h6><b>Opis: </b>"+att.OPIS+"</h6><h6><b>Kontakt: </b>"+att.KONTAKT+"</h6><h6><b>WWW: </b><a href="+att.WWW+" target='_blank'>"+att.WWW+"</a></h6><h6><img src='"+att.ZDJECIE+"' width=250px height=250px></h6><h6><b>Źródło: </b>"+att.ZRODLO+"</h6>");  
+                }
+                function returnicnObiekty_kultury(json, latlng){
+                    var att = json.properties;
+                    return L.marker(latlng, {icon: icnObiekty_kultury}).bindPopup("<h6><b>Nazwa: </b>"+att.NAZWA+"</h6><h6><b>Adres: </b>"+att.ADRES+"</h6><h6><b>Opis: </b>"+att.OPIS+"</h6><h6><b>Kontakt: </b>"+att.KONTAKT+"</h6><h6><b>WWW: </b><a href="+att.WWW+" target='_blank'>"+att.WWW+"</a></h6><h6><b>Źródło: </b>"+att.ZRODLO+"</h6>");
+                }
+                function returnicnObiekty_sakralne(json, latlng){
+                    var att = json.properties;
+                    return L.marker(latlng, {icon: icnObiekty_sakralne}).bindPopup("<h6><b>Nazwa: </b>"+att.NAZWA+"</h6><h6><b>Adres: </b>"+att.ADRES+"</h6><h6><b>Opis: </b>"+att.OPIS+"</h6><h6><img src='"+att.ZDJECIE+"' width=250px height=250px></h6><h6><b>Źródło: </b>"+att.ZRODLO+"</h6>");
+                }
+                function returnicnCmentarze(json, latlng){
+                    var att = json.properties;
+                    return L.marker(latlng, {icon: icnCmentarze}).bindPopup("<h6><b>Nazwa: </b>"+att.NAZWA+"</h6><h6><b>Opis: </b>"+att.OPIS+"</h6><h6><img src='"+att.ZDJECIE+"' width=250px height=250px></h6><h6><b>Źródło: </b>"+att.ZRODLO+"</h6>");
+                }
+                function returnicnObiekty_sportu_i_rekreacji(json, latlng){
+                    var att = json.properties;
+                    return L.marker(latlng, {icon: icnObiekty_sportu_i_rekreacji}).bindPopup("<h6><b>Nazwa: </b>"+att.NAZWA+"</h6><h6><b>Adres: </b>"+att.ADRES+"</h6><h6><b>Opis: </b>"+att.OPIS+"</h6><h6><b>Kontakt: </b>"+att.KONTAKT+"</h6><h6><b>WWW: </b><a href="+att.WWW+" target='_blank'>"+att.WWW+"</a></h6><h6><img src='"+att.ZDJECIE+"' width=250px height=250px></h6><h6><b>Źródło: </b>"+att.ZRODLO+"</h6>");
+                }
+                function returnicnObiekty_gastronomiczne(json, latlng){
+                    var att = json.properties;
+                    return L.marker(latlng, {icon: icnObiekty_gastronomiczne}).bindPopup("<h6><b>Nazwa: </b>"+att.NAZWA+"</h6><h6><b>Adres: </b>"+att.ADRES+"</h6><h6><b>Kontakt: </b>"+att.KONTAKT+"</h6><h6><b>WWW: </b><a href="+att.WWW+" target='_blank'>"+att.WWW+"</a></h6><h6><img src='"+att.ZDJECIE+"' width=250px height=250px></h6><h6><b>Źródło: </b>"+att.ZRODLO+"</h6>");   
+                }
+                function returnicnObiekty_noclegowe(json, latlng){
+                    var att = json.properties;
+                    return L.marker(latlng, {icon: icnObiekty_noclegowe}).bindPopup("<h6><b>Nazwa: </b>"+att.NAZWA+"</h6><h6><b>Adres: </b>"+att.ADRES+"</h6><h6><b>Opis: </b>"+att.OPIS+"</h6><h6><b>Kontakt: </b>"+att.KONTAKT+"</h6><h6><b>WWW: </b><a href="+att.WWW+" target='_blank'>"+att.WWW+"</a></h6><h6><img src='"+att.ZDJECIE+"' width=250px height=250px></h6><h6><b>Źródło: </b>"+att.ZRODLO+"</h6>");
+                }
+                function returnicnPrzystanki_BUS(json, latlng){
+                    var att = json.properties;
+                    return L.marker(latlng, {icon: icnPrzystanki_BUS}).bindPopup("<h6><b>Nazwa: </b>"+att.NAZWA+"</h6>");
+                }
+                function returnicnDworce_i_przystanki_kolejowe(json, latlng){
+                    var att = json.properties;
+                    return L.marker(latlng, {icon: icnDworce_i_przystanki_kolejowe}).bindPopup("<h6><b>Nazwa: </b>"+att.NAZWA+"</h6>");
+                }
+                function returnicnMurale(json, latlng){
+                    var att = json.properties;
+                    return L.marker(latlng, {icon: icnMurale}).bindPopup("<h6><b>Opis: </b>"+att.NAZWA+"</h6><h6><img src='"+att.ZDJECIE+"' width=250px height=250px></h6>");
+                }
+                function returnicnPomniki_przyrody(json, latlng){
+                    var att = json.properties;
+                    return L.marker(latlng, {icon: icnPomniki_przyrody}).bindPopup("<h6><b>Nazwa: </b>"+att.NAZWA+"</h6><h6><b>Opis: </b>"+att.OPIS+"</h6><h6><b>WWW: </b><a href="+att.WWW+" target='_blank'>"+att.WWW+"</a></h6><h6><img src='"+att.ZDJECIE+"' width=250px height=250px></h6><h6><b>Źródło: </b>"+att.ZRODLO+"</h6>");
+                }
+                
+                function returnicnImprezy_cykliczne(json, latlng){
+                    var att = json.properties;
+                    return L.marker(latlng, {icon: icnImprezy_cykliczne}).bindPopup("<h6><b>Nazwa: </b>"+att.NAZWA+"</h6><h6><b>Organizacja: </b>"+att.ORGANIZACJA+"</h6><h6><b>Miejsce: </b>"+att.MIEJSCE+"</h6><h6><b>Data: </b>"+att.DATA+"</h6><h6><b>WWW: </b><a href="+att.WWW+" target='_blank'>"+att.WWW+"</a></h6><h6><img src='"+att.ZDJECIE+"' width=250px height=250px></h6><h6><b>Źródło: </b>"+att.ZRODLO+"</h6>");
+                }
+                
+                function onEachFeature(feature, layer) {
+                    layer.bindPopup("<h6><b>Nazwa: </b>"+feature.properties.NAZWA+"</h6><h6><b>Opis: </b>"+feature.properties.OPIS+"</h6><h6><img src='"+feature.properties.ZDJECIE+"' width=250px height=250px></h6><h6><b>Źródło: </b>"+feature.properties.ZRODLO+"</h6>");
+                }   
+            
+                
+                function obszar_badan_style(){
+                    return {
+                        fillColor: 'white',
+                        weight: 3,
+                        opacity: 1,
+                        color: 'black',
+//                      dashArray: '0',
+                        fillOpacity: 0
+                }}
+                function rezerwaty_przyrody_style(){
+                    return {
+                        fillColor: 'red',
+                        weight: 3,
+                        opacity: 1,
+                        color: 'red',
+//                      dashArray: '0',
+                        fillOpacity: 0.25
+                }}
+                function uzytki_ekologiczne_style(){
+                    return {
+                        fillColor: 'yellow',
+                        weight: 2,
+                        opacity: 1,
+                        color: 'yellow',
+//                      dashArray: '0',
+                        fillOpacity: 0.25
+                }}
+                function parki_style(){
+                    return {
+                        fillColor: 'green',
+                        weight: 1,
+                        opacity: 1,
+                        color: 'green',
+//                      dashArray: '0',
+                        fillOpacity: 0.25
+                }}
+            </script>
+        </main>	
+	</body>
+</html>

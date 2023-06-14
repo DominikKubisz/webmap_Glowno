@@ -1,0 +1,68 @@
+#html, body {
+    width: 100%;
+    height: 100% !important;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+}
+.navbar
+{
+    z-index: 3;
+}
+.bg-webmapGlowno
+{
+    background-color: #5C8019  !important;
+}
+.btn-webmapGlowno {
+    color: #fff;
+    background-color: #5C8019;
+    border-color: #5C8019;
+}
+.navbar-dark .navbar-text {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+.btn-webmapGlowno {
+  color: rgba(255, 255, 255, 0.5);
+  background-color: #5C8019;
+  border-color: #5C8019;
+}
+
+.btn-webmapGlowno:hover {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: #5C8019;
+  border-color: #96ab71;
+}
+.btn-webmapGlowno:focus, .btn-webmapGlowno.focus {
+  color: rgba(255, 255, 255, 0.8);
+}
+.btn-webmapGlowno.disabled, .btn-webmapGlowno:disabled {
+  color: #fff;
+  background-color: #96ab71;
+  border-color: #96ab71;
+}
+
+.btn-webmapGlowno:not(:disabled):not(.disabled):active, .btn-webmapGlowno:not(:disabled):not(.disabled).active,
+.show > .btn-webmapGlowno.dropdown-toggle {
+  color: #fff;
+  background-color: #5C8019;
+  border-color: #5C8019;
+}
+
+.btn-webmapGlowno:not(:disabled):not(.disabled):active:focus, .btn-webmapGlowno:not(:disabled):not(.disabled).active:focus,
+.show > .btn-webmapGlowno.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem #96ab71;
+}
+
+#mapdiv 
+{
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
+}
+#logowydzialu
+{
+    position: absolute; 
+    bottom:0;
+    left:1;
+    margin: 0px;
+}

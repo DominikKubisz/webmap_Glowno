@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<meta charset="utf-8"/>
+		<title>Interaktywna mapa atrakcji i walorów turystycznych Gminy Głowno i Miasta Głowno</title>
+		<link rel="stylesheet" href="main.css" type="text/css">
+		<link rel="stylesheet" href="src/css/bootstrap.min.css" type="text/css">
+		<link rel="stylesheet" href="src/css/fontello.css" type="text/css">
+		<link rel="stylesheet" href="src/css/glyphicons.css">
+		<script src="src/jquery-3.4.1.min.js"></script>
+        <script src="src/js/bootstrap.js"></script>
+		<meta name="description" content="Przed Tobą interaktywna mapa atrakcji i walorów turystycznych zlokalizowanych w granicach administracyjnych tytułowych gmin. Zacznij klikać!"/>
+		<meta name="keywords" content="mapa, mapa interaktywna, kartografia, GIS, SIP, webmap, atrakcje turystyczne, turystyka, rekreacja, Głowno"/>
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+		<meta name="author" content="Dominik Kubisz"/>
+		<style> 
+		</style>
+	</head>
+	<body style="background-color: #f9ffed;">
+        <header>
+            <nav class="navbar navbar-dark bg-webmapGlowno navbar-expand-md fluid">
+                <a class="navbar-brand ml-2" href="https://www.glowno.pl/" target="_blank"><img src="src/images/Miasto_Glowno_herb.svg" height="32" class="d-inline-block" alt="Miasto Głowno"></a>
+                <span class="navbar-text d-inline-block mr-2">Interaktywna mapa atrakcji i walorów turystycznych Gminy Głowno i Miasta Głowno</span>
+                <a class="navbar-brand ml-2" href="https://www.gmina-glowno.pl/" target="_blank"><img src="src/images/Gmina_Glowno_herb.svg" height="32" class="d-inline-block" alt="Gmina Głowno"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainmenu" aria-controls="mainmenu" aria-expanded="false" aria-label="Przełącznik nawigacji">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainmenu">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html"><i class="icon-home"></i> Start </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="o-projekcie.html"><i class="icon-map"></i> O projekcie </a>
+                        </li>    
+                        <li class="nav-item">
+                            <a class="nav-link" href="o-mnie.html"><i class="icon-user"></i> O mnie </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="mailto:dominik.kubisz@gmail.com"><i class="icon-mail"></i> Kontakt </a>
+                        </li>    
+                          
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div class="container-fluid">
+                   <div class="col-md-10 mt-2 offset-md-1">
+                   <h3 style="color: rgba(92, 128, 25, 0.8);">O projekcie</h3>
+                   </div>
+                   <div class="row offset-md-1">
+                    <div id="foto" class="col-md-5">
+                       <img class= "img-thumbnail float-left mr-3 mt-1" src="src/DCIM/obiekty.png" class="d-inline-block" alt="Głowno i okolice z lotu ptaka">
+                    </div>
+                    <div id="opis-projektu" class="col-md-5 mt-2">
+                        <p style="text-align: justify; font-size: 12pt; color: rgba(92, 128, 25, 1);">Niniejszy projekt został zrealizowany w ramach pracy magisterskiej na kierunku Geoinformacja WNG UŁ. Opracowanie przedstawia atrakcje i walory turystyczne zlokalizowane na obszarze dwóch gmin, tj. Gminy Głowno i Miasta Głowno. Miejsca przedstawione na mapie zostały podzielone na 15 warstw tematycznych. Głównym założeniem projektu było wykonanie go wyłącznie przy użyciu oprogramowania OpenSource. Założenie to zostało spełnione. Jeżeli wyrażasz chęć oceny niniejszego opracowania wypełnij <a href="https://forms.gle/6rjzeZT2fCSebYpo8" target="_blank"><u>ankietę</u></a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
