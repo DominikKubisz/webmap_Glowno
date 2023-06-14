@@ -1,0 +1,13 @@
+{
+"type": "FeatureCollection",
+"name": "obiekty_sakralne",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "ID": 1, "NAZWA": "Kościół parafialny pw. św. Jakuba Apostoła(1)", "ADRES": "Głowno ul.Łowicka 7\/11", "OPIS": "Murowany kościół zlokalizowany w Głownie przy ulicy Łowickiej w Głownie.", "ZDJECIE": "src\/DCIM\/JPEG_20200628112057093.jpg", "ZRODLO": "Opracowanie własne." }, "geometry": { "type": "Point", "coordinates": [ 19.724381933022467, 51.964584926967419 ] } },
+{ "type": "Feature", "properties": { "ID": 2, "NAZWA": "Kościół parafialny pw. św. Barbary(2)", "ADRES": "Głowno ul. Sikorskiego 1", "OPIS": "Murowany kościół zlokalizowany przy ulicy Sikorskiego w Głownie.", "ZDJECIE": "src\/DCIM\/JPEG_20200819135530521.jpg", "ZRODLO": "Opracowanie własne." }, "geometry": { "type": "Point", "coordinates": [ 19.726099039357422, 51.945598410285086 ] } },
+{ "type": "Feature", "properties": { "ID": 3, "NAZWA": "Kościół parafialny pw. Matki Bożej Fatimskiej(3)", "ADRES": "Mąkolice", "OPIS": "Murowany kościół położony naprzeciwko zabytkowego kościoła drewnianego w Mąkolicach.", "ZDJECIE": "src\/DCIM\/JPEG_20200816130323102.jpg", "ZRODLO": "Opracowanie własne." }, "geometry": { "type": "Point", "coordinates": [ 19.560990701752868, 52.008538837638447 ] } },
+{ "type": "Feature", "properties": { "ID": 4, "NAZWA": "Kościół zabytkowy pw. św. Wojciecha, św. Stanisława i św. Klemensa(4)", "ADRES": "Mąkolice 90", "OPIS": "Drewniany kościół położony we wsi Mąkolice. Obecnie msze odbywają się w kościele murowanym usytuowanym naprzeciwko.", "ZDJECIE": "src\/DCIM\/JPEG_20200816130044819.jpg", "ZRODLO": "Opracowanie własne." }, "geometry": { "type": "Point", "coordinates": [ 19.560212254861938, 52.007828606931611 ] } },
+{ "type": "Feature", "properties": { "ID": 5, "NAZWA": "Kościół parafialny pw. św. Maksymiliana Marii Kolbego(5)", "ADRES": "Głowno ul. Karasicka 54", "OPIS": "Murowany kościół zlokalizowany w Głownie przy ulicy Karasickiej.", "ZDJECIE": "src\/DCIM\/JPEG_20200819145013017.jpg", "ZRODLO": "Opracowanie własne." }, "geometry": { "type": "Point", "coordinates": [ 19.691316192755934, 51.961510425682192 ] } },
+{ "type": "Feature", "properties": { "ID": 6, "NAZWA": "Sala Królestwa Świadków Jehowy(6)", "ADRES": "Głowno ul. Kościuszki 5", "OPIS": "Świątynia Świadków Jehowy położona w niedalekim sąsiedztwie dwóch szkół średnich przy ulicy Kościuszki w Głownie.", "ZDJECIE": "src\/DCIM\/JPEG_20200628120938006.jpg", "ZRODLO": "Opracowanie własne." }, "geometry": { "type": "Point", "coordinates": [ 19.729949570810984, 51.960501196345824 ] } }
+]
+}

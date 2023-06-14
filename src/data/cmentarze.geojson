@@ -1,0 +1,10 @@
+{
+"type": "FeatureCollection",
+"name": "cmentarze",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "ID": 1, "NAZWA": "Cmentarz parafialny w Mąkolicach(1)", "OPIS": "Cmentarz parafilany w Mąkolicach jest jedynym zlokalizowanym na terenie Gminy Głowno.", "ZDJECIE": "src\/DCIM\/JPEG_20200816131111111.jpg", "ZRODLO": "Opracowanie własne." }, "geometry": { "type": "Point", "coordinates": [ 19.557538552508262, 52.011294254500108 ] } },
+{ "type": "Feature", "properties": { "ID": 2, "NAZWA": "Cmentarz komunalny(2)", "OPIS": "Niewielki cmentarz komunalny położony na obszarze leśnym w Głownie przy ulicy Piaskowej.", "ZDJECIE": "src\/DCIM\/JPEG_20200819150649274.jpg", "ZRODLO": "Opracowanie własne." }, "geometry": { "type": "Point", "coordinates": [ 19.703709156151184, 51.973917659939609 ] } },
+{ "type": "Feature", "properties": { "ID": 3, "NAZWA": "Cmentarz parafialny w Głownie(3)", "OPIS": "Największy cmentarz znajdujący się w Głownie przy ulicy Rynkowskiego. Cmenatrz przynależy do parafii św. Jakuba.", "ZDJECIE": "src\/DCIM\/JPEG_20200819134003636.jpg", "ZRODLO": "Opracowanie własne." }, "geometry": { "type": "Point", "coordinates": [ 19.726658663644542, 51.962525169271295 ] } }
+]
+}

@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"name": "dworce_i_przystanki_kolejowe",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "ID": 1, "NAZWA": "Dworzec kolejowy Głowno(1)" }, "geometry": { "type": "Point", "coordinates": [ 19.703019800000259, 51.961403900015405 ] } },
+{ "type": "Feature", "properties": { "ID": 2, "NAZWA": "Przystanek kolejowy Kamień Łowicki(2)" }, "geometry": { "type": "Point", "coordinates": [ 19.753179500000279, 51.988714200015451 ] } }
+]
+}

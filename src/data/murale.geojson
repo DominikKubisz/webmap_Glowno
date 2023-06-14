@@ -1,0 +1,11 @@
+{
+"type": "FeatureCollection",
+"name": "murale",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "ID": 1, "NAZWA": "Mural namalowany na jednym z budynków przy Placu Wolności w Głownie.", "ZDJECIE": "src\/DCIM\/JPEG_20200628112417673.jpg" }, "geometry": { "type": "Point", "coordinates": [ 19.721743881404119, 51.965193866240845 ] } },
+{ "type": "Feature", "properties": { "ID": 2, "NAZWA": "Mural namalowany na budynku mieszczącym się przy plaży miejskiej w Głownie.", "ZDJECIE": "src\/DCIM\/JPEG_20200819142647163.jpg" }, "geometry": { "type": "Point", "coordinates": [ 19.713988182069386, 51.960347838439688 ] } },
+{ "type": "Feature", "properties": { "ID": 3, "NAZWA": "Mural zdobiący toalety zlokalizowane przy zalewie Mrożyczka.", "ZDJECIE": "src\/DCIM\/JPEG_20200810152207225.jpg" }, "geometry": { "type": "Point", "coordinates": [ 19.715854670391138, 51.962018921555931 ] } },
+{ "type": "Feature", "properties": { "ID": 4, "NAZWA": "Murale będące efektem pracy dzieci i młodzieży zamieszkujących osiedle przy ulicy Sikorskiego w Głownie.", "ZDJECIE": "src\/DCIM\/JPEG_20200628130206765.jpg" }, "geometry": { "type": "Point", "coordinates": [ 19.714923234877315, 51.957659162543564 ] } }
+]
+}

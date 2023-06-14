@@ -1,0 +1,12 @@
+{
+"type": "FeatureCollection",
+"name": "obiekty_kultury",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "ID": 1, "NAZWA": "Miejski Ośrodek Kultury(1)", "ADRES": "Głowno ul. Kopernika 45", "OPIS": "MOK organizuje różnorodne zajęcia i występy arystyczne dla dzieci i młodzieży, m.in. festiwale piosenek, konkursy i zajęcia taneczne, plastyczne itp.", "KONTAKT": "427191143", "WWW": "https:\/\/www.glowno.pl\/168,miejski-osrodek-kultury.html", "ZRODLO": "Opracowanie własne." }, "geometry": { "type": "Point", "coordinates": [ 19.73438608785828, 51.94715161118539 ] } },
+{ "type": "Feature", "properties": { "ID": 2, "NAZWA": "Kino Racjonalizator(2)", "ADRES": "Głowno ul. Kopernika 47", "OPIS": "Kino nie realizuje systematycznych seansów, odbywają się one w czasie ferii zimowych oraz letnich (skierowane głównie do dzieci i młodzieży).", "KONTAKT": "427107226", "WWW": "http:\/\/racjonalizator.prv.pl\/", "ZRODLO": "Opracowanie własne." }, "geometry": { "type": "Point", "coordinates": [ 19.7345166957187, 51.94707010288662 ] } },
+{ "type": "Feature", "properties": { "ID": 3, "NAZWA": "Miejska Biblioteka Publiczna(3)", "ADRES": "Głowno ul. Kopernika 47", "OPIS": "Zasoby miejskiej biblioteki publicznej są dostępne dla osób posiadających kartę czytelnika, którą można wyrobić na miejscu.", "KONTAKT": "427191712", "WWW": "https:\/\/www.glowno.pl\/171,miejska-biblioteka-publiczna.html", "ZRODLO": "Opracowanie własne." }, "geometry": { "type": "Point", "coordinates": [ 19.734135357674209, 51.947040540082021 ] } },
+{ "type": "Feature", "properties": { "ID": 4, "NAZWA": "Ośrodek Upowszechniania Kultury(4)", "ADRES": "Bronisławów 10", "OPIS": "W OUK zlokalizowanym w Bronisławowie organizowane są zajęcia artystyczne w dużej mierze o charakterze ludowym. Zajęcia organizowane są dla dzieci i młodzieży, a także seniorów.", "KONTAKT": "427191511", "WWW": "https:\/\/www.gmina-glowno.pl\/53,kontakt", "ZRODLO": "Opracowanie własne." }, "geometry": { "type": "Point", "coordinates": [ 19.674110883942706, 51.975377907458331 ] } },
+{ "type": "Feature", "properties": { "ID": 5, "NAZWA": "Biblioteka Publiczna(5)", "ADRES": "Bronisławów 10", "OPIS": "Bibliotek Publiczna zlokalizowana we wsi Bronisławów.", "KONTAKT": "427191511", "WWW": "https:\/\/www.gmina-glowno.pl\/53,kontakt", "ZRODLO": "Opracowanie własne." }, "geometry": { "type": "Point", "coordinates": [ 19.67422851612509, 51.975542588312159 ] } }
+]
+}
