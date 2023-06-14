@@ -143,41 +143,41 @@
                     mymap.addLayer(lyrOSM);
                     
                     //punkty
-                    lyrObszar_badan = L.geoJSON.ajax('src/data/obszar_badan.geoJSON', {style: obszar_badan_style}).addTo(mymap);
-                    lyrObiekty_gastronomiczne = L.geoJSON.ajax('src/data/obiekty_gastronomiczne.geoJSON',{pointToLayer:returnicnObiekty_gastronomiczne}).addTo(mymap);
-                    lyrZabytki = L.geoJSON.ajax('src/data/zabytki.geoJSON',{pointToLayer:returnicnZabytki}).addTo(mymap);
-                    lyrObiekty_kultury = L.geoJSON.ajax('src/data/obiekty_kultury.geoJSON',{pointToLayer:returnicnObiekty_kultury}).addTo(mymap);
-                    lyrObiekty_sakralne = L.geoJSON.ajax('src/data/obiekty_sakralne.geoJSON',{pointToLayer:returnicnObiekty_sakralne}).addTo(mymap);
-                    lyrCmentarze = L.geoJSON.ajax('https://github.com/DominikKubisz/webmap_Glowno/blob/main/src/data/cmentarze.geojson',{pointToLayer:returnicnCmentarze}).addTo(mymap);
-                    lyrDworce_i_przystanki_kolejowe = L.geoJSON.ajax('src/data/dworce_i_przystanki_kolejowe.geoJSON',{pointToLayer:returnicnDworce_i_przystanki_kolejowe}).addTo(mymap);
-                    lyrMurale = L.geoJSON.ajax('src/data/murale.geoJSON',{pointToLayer:returnicnMurale}).addTo(mymap);
-                    lyrPomniki_przyrody = L.geoJSON.ajax('src/data/pomniki_przyrody.geoJSON',{pointToLayer:returnicnPomniki_przyrody}).addTo(mymap);
-                    lyrObiekty_sportu_i_rekreacji = L.geoJSON.ajax('src/data/obiekty_sportu_i_rekreacji.geoJSON',{pointToLayer:returnicnObiekty_sportu_i_rekreacji}).addTo(mymap);
-                    lyrObiekty_noclegowe = L.geoJSON.ajax('src/data/obiekty_noclegowe.geoJSON',{pointToLayer:returnicnObiekty_noclegowe}).addTo(mymap);
-                    lyrPrzystanki_Bus = L.geoJSON.ajax('src/data/przystanki_BUS.geoJSON',{pointToLayer:returnicnPrzystanki_BUS}).addTo(mymap);
-                    lyrImprezy_cykliczne = L.geoJSON.ajax('src/data/imprezy_cykliczne.geoJSON',{pointToLayer:returnicnImprezy_cykliczne}).addTo(mymap);
+                    lyrObszar_badan = L.geoJSON.ajax('./src/data/obszar_badan.geoJSON', {style: obszar_badan_style}).addTo(mymap);
+                    lyrObiekty_gastronomiczne = L.geoJSON.ajax('./src/data/obiekty_gastronomiczne.geoJSON',{pointToLayer:returnicnObiekty_gastronomiczne}).addTo(mymap);
+                    lyrZabytki = L.geoJSON.ajax('./src/data/zabytki.geoJSON',{pointToLayer:returnicnZabytki}).addTo(mymap);
+                    lyrObiekty_kultury = L.geoJSON.ajax('./src/data/obiekty_kultury.geoJSON',{pointToLayer:returnicnObiekty_kultury}).addTo(mymap);
+                    lyrObiekty_sakralne = L.geoJSON.ajax('./src/data/obiekty_sakralne.geoJSON',{pointToLayer:returnicnObiekty_sakralne}).addTo(mymap);
+                    lyrCmentarze = L.geoJSON.ajax('./src/data/cmentarze.geojson',{pointToLayer:returnicnCmentarze}).addTo(mymap);
+                    lyrDworce_i_przystanki_kolejowe = L.geoJSON.ajax('./src/data/dworce_i_przystanki_kolejowe.geoJSON',{pointToLayer:returnicnDworce_i_przystanki_kolejowe}).addTo(mymap);
+                    lyrMurale = L.geoJSON.ajax('./src/data/murale.geoJSON',{pointToLayer:returnicnMurale}).addTo(mymap);
+                    lyrPomniki_przyrody = L.geoJSON.ajax('./src/data/pomniki_przyrody.geoJSON',{pointToLayer:returnicnPomniki_przyrody}).addTo(mymap);
+                    lyrObiekty_sportu_i_rekreacji = L.geoJSON.ajax('./src/data/obiekty_sportu_i_rekreacji.geoJSON',{pointToLayer:returnicnObiekty_sportu_i_rekreacji}).addTo(mymap);
+                    lyrObiekty_noclegowe = L.geoJSON.ajax('./src/data/obiekty_noclegowe.geoJSON',{pointToLayer:returnicnObiekty_noclegowe}).addTo(mymap);
+                    lyrPrzystanki_Bus = L.geoJSON.ajax('./src/data/przystanki_BUS.geoJSON',{pointToLayer:returnicnPrzystanki_BUS}).addTo(mymap);
+                    lyrImprezy_cykliczne = L.geoJSON.ajax('./src/data/imprezy_cykliczne.geoJSON',{pointToLayer:returnicnImprezy_cykliczne}).addTo(mymap);
                     
                     //poligony
-                    lyrRezerwaty_przyrody = L.geoJSON.ajax('src/data/rezerwaty_przyrody.geoJSON',{onEachFeature: onEachFeature, style:rezerwaty_przyrody_style}).addTo(mymap);
-                    lyrUzytki_ekologiczne = L.geoJSON.ajax('src/data/uzytki_ekologiczne.geoJSON',{onEachFeature: onEachFeature, style:uzytki_ekologiczne_style}).addTo(mymap);
-                    lyrParki = L.geoJSON.ajax('src/data/parki.geoJSON',{onEachFeature: onEachFeature, style:parki_style}).addTo(mymap);
+                    lyrRezerwaty_przyrody = L.geoJSON.ajax('./src/data/rezerwaty_przyrody.geoJSON',{onEachFeature: onEachFeature, style:rezerwaty_przyrody_style}).addTo(mymap);
+                    lyrUzytki_ekologiczne = L.geoJSON.ajax('./src/data/uzytki_ekologiczne.geoJSON',{onEachFeature: onEachFeature, style:uzytki_ekologiczne_style}).addTo(mymap);
+                    lyrParki = L.geoJSON.ajax('./src/data/parki.geoJSON',{onEachFeature: onEachFeature, style:parki_style}).addTo(mymap);
                     
                     //GRUPA
                     var lyrLayerGroup = L.layerGroup([lyrObiekty_gastronomiczne, lyrZabytki, lyrObiekty_kultury, lyrObiekty_sakralne, lyrCmentarze, lyrDworce_i_przystanki_kolejowe, lyrMurale, lyrPomniki_przyrody, lyrObiekty_sportu_i_rekreacji, lyrObiekty_noclegowe, lyrPrzystanki_Bus, lyrImprezy_cykliczne, lyrRezerwaty_przyrody, lyrUzytki_ekologiczne, lyrParki]).addTo(mymap);
                     
             
-                    icnZabytki = L.icon({iconUrl:'src/images/zabytki.svg',iconSize:[35,35], popupAnchor:[0, -22]});
-                    icnObiekty_kultury = L.icon({iconUrl:'src/images/obiekty_kultury.svg',iconSize:[35,35], popupAnchor:[0, -22]});
-                    icnObiekty_sakralne = L.icon({iconUrl:'src/images/obiekty_sakralne.svg',iconSize:[35,35], popupAnchor:[0, -22]});
-                    icnCmentarze = L.icon({iconUrl:'src/images/cmentarz.svg',iconSize:[35,35], popupAnchor:[0, -22]});
-                    icnObiekty_sportu_i_rekreacji = L.icon({iconUrl:'src/images/sport_rekreacja.svg',iconSize:[35,35], popupAnchor:[0, -22]});
-                    icnObiekty_gastronomiczne = L.icon({iconUrl:'src/images/gastronomia.svg',iconSize:[35,35], popupAnchor:[0, -22]});
-                    icnObiekty_noclegowe = L.icon({iconUrl:'src/images/nocleg.svg',iconSize:[35,35], popupAnchor:[0, -22]});
-                    icnPrzystanki_BUS = L.icon({iconUrl:'src/images/bus.svg',iconSize:[35,35], popupAnchor:[0, -22]});
-                    icnDworce_i_przystanki_kolejowe = L.icon({iconUrl:'src/images/PKP.svg',iconSize:[35,35], popupAnchor:[0, -22]});
-                    icnMurale = L.icon({iconUrl:'src/images/mural.svg',iconSize:[35,35], popupAnchor:[0, -22]});
-                    icnPomniki_przyrody = L.icon({iconUrl:'src/images/pomniki_przyrody.svg',iconSize:[35,35], popupAnchor:[0, -22]});
-                    icnImprezy_cykliczne = L.icon({iconUrl:'src/images/event1.svg',iconSize:[35,35], popupAnchor:[0, -22]});
+                    icnZabytki = L.icon({iconUrl:'./src/images/zabytki.svg',iconSize:[35,35], popupAnchor:[0, -22]});
+                    icnObiekty_kultury = L.icon({iconUrl:'./src/images/obiekty_kultury.svg',iconSize:[35,35], popupAnchor:[0, -22]});
+                    icnObiekty_sakralne = L.icon({iconUrl:'./src/images/obiekty_sakralne.svg',iconSize:[35,35], popupAnchor:[0, -22]});
+                    icnCmentarze = L.icon({iconUrl:'./src/images/cmentarz.svg',iconSize:[35,35], popupAnchor:[0, -22]});
+                    icnObiekty_sportu_i_rekreacji = L.icon({iconUrl:'./src/images/sport_rekreacja.svg',iconSize:[35,35], popupAnchor:[0, -22]});
+                    icnObiekty_gastronomiczne = L.icon({iconUrl:'./src/images/gastronomia.svg',iconSize:[35,35], popupAnchor:[0, -22]});
+                    icnObiekty_noclegowe = L.icon({iconUrl:'./src/images/nocleg.svg',iconSize:[35,35], popupAnchor:[0, -22]});
+                    icnPrzystanki_BUS = L.icon({iconUrl:'./src/images/bus.svg',iconSize:[35,35], popupAnchor:[0, -22]});
+                    icnDworce_i_przystanki_kolejowe = L.icon({iconUrl:'./src/images/PKP.svg',iconSize:[35,35], popupAnchor:[0, -22]});
+                    icnMurale = L.icon({iconUrl:'./src/images/mural.svg',iconSize:[35,35], popupAnchor:[0, -22]});
+                    icnPomniki_przyrody = L.icon({iconUrl:'./src/images/pomniki_przyrody.svg',iconSize:[35,35], popupAnchor:[0, -22]});
+                    icnImprezy_cykliczne = L.icon({iconUrl:'./src/images/event1.svg',iconSize:[35,35], popupAnchor:[0, -22]});
                     
                     objBasemaps = {
                         "Open Street Map": lyrOSM,
