@@ -143,24 +143,24 @@
                     mymap.addLayer(lyrOSM);
                     
                     //punkty
-                    lyrObszar_badan = L.geoJSON.ajax('./src/data/obszar_badan.geoJSON', {style: obszar_badan_style}).addTo(mymap);
-                    lyrObiekty_gastronomiczne = L.geoJSON.ajax('./src/data/obiekty_gastronomiczne.geoJSON',{pointToLayer:returnicnObiekty_gastronomiczne}).addTo(mymap);
-                    lyrZabytki = L.geoJSON.ajax('./src/data/zabytki.geoJSON',{pointToLayer:returnicnZabytki}).addTo(mymap);
-                    lyrObiekty_kultury = L.geoJSON.ajax('./src/data/obiekty_kultury.geoJSON',{pointToLayer:returnicnObiekty_kultury}).addTo(mymap);
-                    lyrObiekty_sakralne = L.geoJSON.ajax('./src/data/obiekty_sakralne.geoJSON',{pointToLayer:returnicnObiekty_sakralne}).addTo(mymap);
+                    lyrObszar_badan = L.geoJSON.ajax('./src/data/obszar_badan.geojson', {style: obszar_badan_style}).addTo(mymap);
+                    lyrObiekty_gastronomiczne = L.geoJSON.ajax('./src/data/obiekty_gastronomiczne.geojson',{pointToLayer:returnicnObiekty_gastronomiczne}).addTo(mymap);
+                    lyrZabytki = L.geoJSON.ajax('./src/data/zabytki.geojson',{pointToLayer:returnicnZabytki}).addTo(mymap);
+                    lyrObiekty_kultury = L.geoJSON.ajax('./src/data/obiekty_kultury.geojson',{pointToLayer:returnicnObiekty_kultury}).addTo(mymap);
+                    lyrObiekty_sakralne = L.geoJSON.ajax('./src/data/obiekty_sakralne.geojson',{pointToLayer:returnicnObiekty_sakralne}).addTo(mymap);
                     lyrCmentarze = L.geoJSON.ajax('./src/data/cmentarze.geojson',{pointToLayer:returnicnCmentarze}).addTo(mymap);
-                    lyrDworce_i_przystanki_kolejowe = L.geoJSON.ajax('./src/data/dworce_i_przystanki_kolejowe.geoJSON',{pointToLayer:returnicnDworce_i_przystanki_kolejowe}).addTo(mymap);
-                    lyrMurale = L.geoJSON.ajax('./src/data/murale.geoJSON',{pointToLayer:returnicnMurale}).addTo(mymap);
-                    lyrPomniki_przyrody = L.geoJSON.ajax('./src/data/pomniki_przyrody.geoJSON',{pointToLayer:returnicnPomniki_przyrody}).addTo(mymap);
-                    lyrObiekty_sportu_i_rekreacji = L.geoJSON.ajax('./src/data/obiekty_sportu_i_rekreacji.geoJSON',{pointToLayer:returnicnObiekty_sportu_i_rekreacji}).addTo(mymap);
-                    lyrObiekty_noclegowe = L.geoJSON.ajax('./src/data/obiekty_noclegowe.geoJSON',{pointToLayer:returnicnObiekty_noclegowe}).addTo(mymap);
-                    lyrPrzystanki_Bus = L.geoJSON.ajax('./src/data/przystanki_BUS.geoJSON',{pointToLayer:returnicnPrzystanki_BUS}).addTo(mymap);
-                    lyrImprezy_cykliczne = L.geoJSON.ajax('./src/data/imprezy_cykliczne.geoJSON',{pointToLayer:returnicnImprezy_cykliczne}).addTo(mymap);
+                    lyrDworce_i_przystanki_kolejowe = L.geoJSON.ajax('./src/data/dworce_i_przystanki_kolejowe.geojson',{pointToLayer:returnicnDworce_i_przystanki_kolejowe}).addTo(mymap);
+                    lyrMurale = L.geoJSON.ajax('./src/data/murale.geojson',{pointToLayer:returnicnMurale}).addTo(mymap);
+                    lyrPomniki_przyrody = L.geoJSON.ajax('./src/data/pomniki_przyrody.geojson',{pointToLayer:returnicnPomniki_przyrody}).addTo(mymap);
+                    lyrObiekty_sportu_i_rekreacji = L.geoJSON.ajax('./src/data/obiekty_sportu_i_rekreacji.geojson',{pointToLayer:returnicnObiekty_sportu_i_rekreacji}).addTo(mymap);
+                    lyrObiekty_noclegowe = L.geoJSON.ajax('./src/data/obiekty_noclegowe.geojson',{pointToLayer:returnicnObiekty_noclegowe}).addTo(mymap);
+                    lyrPrzystanki_Bus = L.geoJSON.ajax('./src/data/przystanki_BUS.geojson',{pointToLayer:returnicnPrzystanki_BUS}).addTo(mymap);
+                    lyrImprezy_cykliczne = L.geoJSON.ajax('./src/data/imprezy_cykliczne.geojson',{pointToLayer:returnicnImprezy_cykliczne}).addTo(mymap);
                     
                     //poligony
-                    lyrRezerwaty_przyrody = L.geoJSON.ajax('./src/data/rezerwaty_przyrody.geoJSON',{onEachFeature: onEachFeature, style:rezerwaty_przyrody_style}).addTo(mymap);
-                    lyrUzytki_ekologiczne = L.geoJSON.ajax('./src/data/uzytki_ekologiczne.geoJSON',{onEachFeature: onEachFeature, style:uzytki_ekologiczne_style}).addTo(mymap);
-                    lyrParki = L.geoJSON.ajax('./src/data/parki.geoJSON',{onEachFeature: onEachFeature, style:parki_style}).addTo(mymap);
+                    lyrRezerwaty_przyrody = L.geoJSON.ajax('./src/data/rezerwaty_przyrody.geojson',{onEachFeature: onEachFeature, style:rezerwaty_przyrody_style}).addTo(mymap);
+                    lyrUzytki_ekologiczne = L.geoJSON.ajax('./src/data/uzytki_ekologiczne.geojson',{onEachFeature: onEachFeature, style:uzytki_ekologiczne_style}).addTo(mymap);
+                    lyrParki = L.geoJSON.ajax('./src/data/parki.geojson',{onEachFeature: onEachFeature, style:parki_style}).addTo(mymap);
                     
                     //GRUPA
                     var lyrLayerGroup = L.layerGroup([lyrObiekty_gastronomiczne, lyrZabytki, lyrObiekty_kultury, lyrObiekty_sakralne, lyrCmentarze, lyrDworce_i_przystanki_kolejowe, lyrMurale, lyrPomniki_przyrody, lyrObiekty_sportu_i_rekreacji, lyrObiekty_noclegowe, lyrPrzystanki_Bus, lyrImprezy_cykliczne, lyrRezerwaty_przyrody, lyrUzytki_ekologiczne, lyrParki]).addTo(mymap);
