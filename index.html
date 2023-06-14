@@ -143,7 +143,7 @@
                     mymap.addLayer(lyrOSM);
                     
                     //punkty
-                    lyrObszar_badan = L.geoJSON.ajax('webmap_Glowno/src/data/obszar_badan.geoJSON', {style: obszar_badan_style}).addTo(mymap);
+                    lyrObszar_badan = L.geoJSON.ajax('src/data/obszar_badan.geoJSON', {style: obszar_badan_style}).addTo(mymap);
                     lyrObiekty_gastronomiczne = L.geoJSON.ajax('src/data/obiekty_gastronomiczne.geoJSON',{pointToLayer:returnicnObiekty_gastronomiczne}).addTo(mymap);
                     lyrZabytki = L.geoJSON.ajax('src/data/zabytki.geoJSON',{pointToLayer:returnicnZabytki}).addTo(mymap);
                     lyrObiekty_kultury = L.geoJSON.ajax('src/data/obiekty_kultury.geoJSON',{pointToLayer:returnicnObiekty_kultury}).addTo(mymap);
